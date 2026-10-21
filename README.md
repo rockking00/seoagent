@@ -15,11 +15,10 @@ site/        静态页面，Vercel 直接托管
   og.png          分享图，由 tools/make-og.py 生成
 api/
   lead.js         Vercel Serverless Function：POST /api/lead
-server/       跑在 VPS 上的表单服务（和 api/lead.js 二选一）
-deploy/       VPS 用的 Caddyfile / systemd / 装机脚本
+deploy/       VPS 部署脚本（Caddyfile / systemd / 装机），`vps/` 里是 VPS 版的表单服务
 tools/        preview 预览、check 自检、setup 换域名、make-og 出图
 vercel.json   路由（cleanUrls）与响应头
-package.json  只为让 api/ 使用 ESM，没有依赖
+package.json  给 api/ 启用 ESM，外加一条空构建脚本
 ```
 
 ## 本地预览
@@ -33,12 +32,12 @@ node tools/preview.mjs          # 页面 → http://127.0.0.1:8080
 要连表单一起测，再开一个终端：
 
 ```bash
-node server/server.mjs          # 表单接口 → :3001
+node deploy/vps/server.mjs      # 表单接口 → :3001
 ```
 
 `preview.mjs` 会把 `/api/*` 转发到 :3001，所以在 :8080 上提交表单也能走完整流程，提交完跳到 `/thanks`。
 
-> 线上用的是 `api/lead.js`（Vercel 函数），不是 `server/server.mjs`。两者接口一致，本地哪个都能用。
+> 线上用的是 `api/lead.js`（Vercel 函数），不是 `deploy/vps/server.mjs`。两者接口一致，本地哪个都能用。
 
 改完东西跑一下自检：
 
@@ -130,13 +129,13 @@ node tools/setup.mjs --domain seo.yourdomain.com --email you@yourdomain.com
 ./deploy/deploy.sh <IP> --full              # macOS / Linux
 ```
 
-DNS 指向机器 IP，Caddy 会自动签证书。表单走 `server/server.mjs`，线索落在 `/srv/seoagent/server/data/leads.ndjson`：
+DNS 指向机器 IP，Caddy 会自动签证书。表单走 `deploy/vps/server.mjs`，线索落在 `/srv/seoagent/server/data/leads.ndjson`：
 
 ```bash
 ssh root@<IP> "cd /srv/seoagent/server && node scripts/leads.mjs"
 ```
 
-VPS 版要把 `server/.env.example` 复制成 `.env` 再填，环境变量名和 Vercel 那边完全一样。
+VPS 版要把 `deploy/vps/.env.example` 复制成 `.env` 再填，环境变量名和 Vercel 那边完全一样。
 
 两种方式选一个就行，接口路径都是 `/api/lead`，前端不用改。
 
@@ -169,6 +168,8 @@ VPS 版要把 `server/.env.example` 复制成 `.env` 再填，环境变量名和
 5. 跑 `node tools/check.mjs`
 
 ## 常见问题
+
+**构建失败：`No entrypoint found in ".../server"`**：Vercel 会把仓库里任何带 `package.json` 的子目录当成第二个 Node 应用去构建，然后又在构建前按 `.vercelignore` 把里面的文件删了，于是找不到入口。所以 VPS 版的服务不能放在带 `package.json` 的 `server/` 里——现在它在 `deploy/vps/`，整个 `deploy/` 都不上传。**以后加目录，别在里面放 `package.json`。**
 
 **Vercel 上提交表单 404**：确认 `api/lead.js` 在仓库根目录，且 Output Directory 是 `site`。`api/` 是 Vercel 的特殊目录，不受 `outputDirectory` 影响。
 

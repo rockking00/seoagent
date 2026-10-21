@@ -31,7 +31,7 @@ $archive = ".deploy-site.tgz"
 $remoteScript = ".deploy-remote.sh"
 
 if (-not (Test-Path (Join-Path $rootDir "site/index.html"))) { throw "找不到 site/index.html" }
-if (-not (Test-Path (Join-Path $rootDir "server/server.mjs"))) { throw "找不到 server/server.mjs" }
+if (-not (Test-Path (Join-Path $rootDir "deploy/vps/server.mjs"))) { throw "找不到 deploy/vps/server.mjs" }
 
 Push-Location $rootDir
 try {
@@ -41,8 +41,8 @@ try {
 
     Write-Host "==> 上传到 $target" -ForegroundColor Cyan
     scp -q $archive "${target}:/tmp/seo-site.tgz"
-    scp -q "server/server.mjs" "${target}:/tmp/seo-server.mjs"
-    scp -q "server/scripts/leads.mjs" "${target}:/tmp/seo-leads.mjs"
+    scp -q "deploy/vps/server.mjs" "${target}:/tmp/seo-server.mjs"
+    scp -q "deploy/vps/scripts/leads.mjs" "${target}:/tmp/seo-leads.mjs"
 
     if ($Full) {
         scp -q "deploy/Caddyfile" "${target}:/tmp/seo-Caddyfile"

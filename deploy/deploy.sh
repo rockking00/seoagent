@@ -24,8 +24,8 @@ tar -czf /tmp/seo-site.tgz -C "$ROOT_DIR/site" .
 
 echo "==> 上传"
 scp -q /tmp/seo-site.tgz "${TARGET}:/tmp/seo-site.tgz"
-scp -q "$ROOT_DIR/server/server.mjs" "${TARGET}:/tmp/seo-server.mjs"
-scp -q "$ROOT_DIR/server/scripts/leads.mjs" "${TARGET}:/tmp/seo-leads.mjs"
+scp -q "$ROOT_DIR/deploy/vps/server.mjs" "${TARGET}:/tmp/seo-server.mjs"
+scp -q "$ROOT_DIR/deploy/vps/scripts/leads.mjs" "${TARGET}:/tmp/seo-leads.mjs"
 
 if [ "$FULL" = "--full" ]; then
   scp -q "$ROOT_DIR/deploy/Caddyfile" "${TARGET}:/tmp/seo-Caddyfile"

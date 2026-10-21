@@ -1,5 +1,6 @@
 # 只上传静态站和 api/，其余不参与部署
-server/
+# 注意：不要放任何带 package.json 的目录进这个仓库的构建上下文，
+# Vercel 会把子目录里的 package.json 当成第二个应用去构建。
 deploy/
 tools/
 docs/
