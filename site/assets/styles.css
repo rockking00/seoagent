@@ -2248,3 +2248,8 @@ select {
     font-size: 0.9rem;
   }
 }
+
+/* 数字条撤掉后，首屏底部留白收紧一点，别空出一大块 */
+.hero {
+  padding-bottom: clamp(36px, 4.5vw, 60px);
+}
