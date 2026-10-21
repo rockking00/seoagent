@@ -13,12 +13,12 @@ from pathlib import Path
 from PIL import Image, ImageDraw, ImageFont
 
 # ---------------- 改这里 ----------------
-BRAND = "增长前线"
-HEADLINE = ["让 Google 每天给你带来客户，", "而不只是一份报表"]
-KICKER = "GOOGLE SEO 顾问 · 出海与外贸"
-SUBLINE = "关键词 · 内容结构 · 技术底子 · 数据监测"
+BRAND = "SEO增长前线"
+HEADLINE = ["谷歌 SEO 入门：", "从收录到排名，一步步做对"]
+KICKER = "GOOGLE SEO · 入门到落地"
+SUBLINE = "工具 · 教程 · 关键词 · 排名 · 数据"
 FOOTER_LEFT = "example.com"
-FOOTER_RIGHT = "只接 3 个项目 · 24 小时内回复"
+FOOTER_RIGHT = "免费诊断 · 24 小时内回复"
 # ---------------------------------------
 
 W, H = 1200, 630

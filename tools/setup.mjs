@@ -60,7 +60,7 @@ const rules = [
   ['example.com', domain],
 ];
 
-if (brand) rules.push(['增长前线', brand]);
+if (brand) rules.push(['SEO增长前线', brand]);
 if (icp) rules.push(['沪ICP备XXXXXXXX号', icp]);
 
 let total = 0;
