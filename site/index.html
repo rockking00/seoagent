@@ -51,54 +51,71 @@
         "priceRange": "¥6,800 – ¥20,000+"
       }
     </script>
-    <script type="application/ld+json">
+        <script type="application/ld+json">
       {
         "@context": "https://schema.org",
         "@type": "FAQPage",
         "mainEntity": [
           {
             "@type": "Question",
-            "name": "多久能看到效果？",
+            "name": "SEO 和 SEM 有什么区别？",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "技术类问题通常 2–4 周就能看到索引和抓取的变化。内容和排名的增长一般 3 个月起，6 个月进入明显区间。任何承诺「一个月上首页」的，要么在作弊，要么在骗你。"
+              "text": "SEO 拿的是自然结果，不按点击付费；SEM 通常指竞价广告，点一次付一次钱。前者慢，但做起来之后不用再为每次点击买单；后者快，停投就停量。两者不是二选一——多数站先用广告验证需求，再用 SEO 把获客成本降下来。"
             }
           },
           {
             "@type": "Question",
-            "name": "和 SEO 公司、外包团队有什么区别？",
+            "name": "收录、排名、点击，是什么关系？",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "公司卖的是人力和流程，我卖的是判断。你的项目由我一个人做策略和关键执行，不会转交给刚毕业的执行。代价是我同时只接 3 个，排期要等。"
+              "text": "四段接力：有页面覆盖这类需求 → 被收录 → 排到用户会点的位置 → 标题让人愿意点。任何一段是 0，结果就是 0。大部分「做了没效果」，卡在前面两段，而不是排名本身。"
             }
           },
           {
             "@type": "Question",
-            "name": "需要我这边配几个人？",
+            "name": "关键词密度还有用吗？",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "最少需要一个能拍板的人和一个能改代码的人。内容可以由你的团队写（我给 brief 和改稿），也可以外包，但我不做纯代写。"
+              "text": "十年前就过时了。现在看的是语义结构和距离——词出现在哪里、离什么近。堆词只会让人读不下去，而「读不下去」本身就是个负向信号。"
             }
           },
           {
             "@type": "Question",
-            "name": "只做 Google，还是也做百度？",
+            "name": "外链现在还重要吗？",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "以 Google 为主，百度可以做诊断但不接长期顾问。两边的规则、内容偏好和竞争结构差别很大，同时做通常两头都不深。"
+              "text": "重要，但「数量」早就不值钱了。被主题相关、没有利益关联的页面引用才有价值；同一个站、同一个 IP 段互相捧场，权重会被重新折算，等于白做。"
             }
           },
           {
             "@type": "Question",
-            "name": "怎么开始？",
+            "name": "新站一般多久能被收录、出排名？",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "先在页面下方留资或直接发邮件，附上站点和大致目标。我会先看一遍公开数据，48 小时内回你一封有具体判断的邮件——不是报价单。"
+              "text": "收录看抓取预算和链接入口，快的一两天，慢的几周；排名更久，通常三个月起步。承诺「一个月上首页」的，要么在作弊，要么在骗你。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "为什么同一个词，不同人搜出来的结果不一样？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "结果里混了个性化信号：位置、语言、历史点击、设备。排名工具给的是某个固定条件下的快照，不完全等于你屏幕上看到的。看趋势，别盯单次截图。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "谷歌官方文档里，最该先读哪几篇？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "三篇：Search Essentials（收录与内容规范）、Search Console 的帮助文档（怎么看数据）、Core Web Vitals（体验指标）。中文互联网上流传的「SEO 技巧」，大部分正确而无用，少部分错误且有害。"
             }
           }
         ]
       }
     </script>
+
   </head>
 
   <body>
@@ -121,7 +138,7 @@
           <a href="/articles/how-search-works">搜索原理</a>
         </nav>
 
-        <a class="btn btn--primary header-cta" href="#contact">免费诊断</a>
+        <a class="btn btn--primary header-cta" href="mailto:hi@example.com">免费诊断</a>
       </div>
     </header>
 
@@ -437,9 +454,6 @@
             </li>
           </ol>
 
-          <p class="section-note">
-            这六条也是我给自己定的规矩。<a href="#pricing">报价和交付物</a>都写在页面上，签之前可以先对一遍。
-          </p>
         </div>
       </section>
 
@@ -521,7 +535,7 @@
                 <p>一个月大概是：月初定这个月改哪些页面，中旬改，月底复盘。改什么、为什么改、改完预期是什么，都写在清单里。</p>
                 <p>交付物都是文档：词库、页面改写清单、月度复盘，不是口头建议。</p>
               </div>
-              <a class="price-cta" href="#contact">聊聊你的站 →</a>
+              <a class="price-cta" href="mailto:hi@example.com">聊聊你的站 →</a>
             </article>
 
             <div class="price-stack">
@@ -561,190 +575,54 @@
         </div>
       </section>
 
-      <!-- ===================== 关于 ===================== -->
-      <section class="section" id="about">
-        <div class="container about" data-reveal>
-          <div class="about-photo" aria-hidden="true"><span>Z</span></div>
-
-          <div class="about-text">
-            <p class="eyebrow">关于</p>
-            <h2>谁在帮你做这件事</h2>
-            <p>
-              2013 年开始做搜索增长，先后在电商和 SaaS 公司负责自然流量，2019 年起独立接项目。做过最大的站日均自然访客
-              40 万，也做过只有 200 个页面、但每个页面都在赚钱的小站。
-            </p>
-            <p>
-              我不接三类项目：要求 30 天上首页的、要做站群和 PBN 的、以及没有开发资源配合的。前两类会毁掉站点，第三类做不出结果。
-            </p>
-            <p class="about-caption">独立顾问 · 常驻上海 · 远程协作</p>
-          </div>
-        </div>
-      </section>
-
-      <!-- ===================== FAQ ===================== -->
+            <!-- ===================== FAQ ===================== -->
       <section class="section" id="faq">
         <div class="container">
           <div class="section-head" data-reveal>
             <p class="eyebrow">FAQ</p>
-            <h2>你大概会问的</h2>
+            <h2>关于 SEO，常被问到的几个问题</h2>
           </div>
 
           <div class="faq">
             <details open>
-              <summary>多久能看到效果？</summary>
-              <p>
-                技术类问题通常 2–4 周就能看到索引和抓取的变化。内容和排名的增长一般 3 个月起，6 个月进入明显区间。任何承诺「一个月上首页」的，要么在作弊，要么在骗你。
-              </p>
+              <summary>SEO 和 SEM 有什么区别？</summary>
+              <p>SEO 拿的是自然结果，不按点击付费；SEM 通常指竞价广告，点一次付一次钱。前者慢，但做起来之后不用再为每次点击买单；后者快，停投就停量。两者不是二选一——多数站先用广告验证需求，再用 SEO 把获客成本降下来。</p>
             </details>
 
             <details>
-              <summary>和 SEO 公司、外包团队有什么区别？</summary>
-              <p>
-                公司卖的是人力和流程，我卖的是判断。你的项目由我一个人做策略和关键执行，不会转交给刚毕业的执行。代价是我同时只接 3 个，排期要等。
-              </p>
+              <summary>收录、排名、点击，是什么关系？</summary>
+              <p>四段接力：有页面覆盖这类需求 → 被收录 → 排到用户会点的位置 → 标题让人愿意点。任何一段是 0，结果就是 0。大部分「做了没效果」，卡在前面两段，而不是排名本身。</p>
             </details>
 
             <details>
-              <summary>需要我这边配几个人？</summary>
-              <p>
-                最少需要一个能拍板的人和一个能改代码的人。内容可以由你的团队写（我给 brief 和改稿），也可以外包，但我不做纯代写。
-              </p>
+              <summary>关键词密度还有用吗？</summary>
+              <p>十年前就过时了。现在看的是语义结构和距离——词出现在哪里、离什么近。堆词只会让人读不下去，而「读不下去」本身就是个负向信号。</p>
             </details>
 
             <details>
-              <summary>只做 Google，还是也做百度？</summary>
-              <p>
-                以 Google 为主，百度可以做诊断但不接长期顾问。两边的规则、内容偏好和竞争结构差别很大，同时做通常两头都不深。
-              </p>
+              <summary>外链现在还重要吗？</summary>
+              <p>重要，但「数量」早就不值钱了。被主题相关、没有利益关联的页面引用才有价值；同一个站、同一个 IP 段互相捧场，权重会被重新折算，等于白做。</p>
             </details>
 
             <details>
-              <summary>怎么开始？</summary>
-              <p>
-                先在下面留资或直接发邮件，附上站点和大致目标。我会先看一遍公开数据，48 小时内回你一封有具体判断的邮件——不是报价单。
-              </p>
+              <summary>新站一般多久能被收录、出排名？</summary>
+              <p>收录看抓取预算和链接入口，快的一两天，慢的几周；排名更久，通常三个月起步。承诺「一个月上首页」的，要么在作弊，要么在骗你。</p>
+            </details>
+
+            <details>
+              <summary>为什么同一个词，不同人搜出来的结果不一样？</summary>
+              <p>结果里混了个性化信号：位置、语言、历史点击、设备。排名工具给的是某个固定条件下的快照，不完全等于你屏幕上看到的。看趋势，别盯单次截图。</p>
+            </details>
+
+            <details>
+              <summary>谷歌官方文档里，最该先读哪几篇？</summary>
+              <p>三篇：Search Essentials（收录与内容规范）、Search Console 的帮助文档（怎么看数据）、Core Web Vitals（体验指标）。中文互联网上流传的「SEO 技巧」，大部分正确而无用，少部分错误且有害。</p>
             </details>
           </div>
         </div>
       </section>
 
-      <!-- ===================== 联系 ===================== -->
-      <section class="section" id="contact">
-        <div class="container contact-grid">
-          <div>
-            <form class="form-card" action="/api/lead" method="post">
-              <div class="field-row">
-                <div class="field">
-                  <label for="f-name">称呼</label>
-                  <input
-                    id="f-name"
-                    name="name"
-                    type="text"
-                    autocomplete="name"
-                    placeholder="怎么称呼你"
-                    maxlength="40"
-                  />
-                </div>
-
-                <div class="field">
-                  <label for="f-email">邮箱 <em>*</em></label>
-                  <input
-                    id="f-email"
-                    name="email"
-                    type="email"
-                    autocomplete="email"
-                    required
-                    placeholder="you@company.com"
-                    maxlength="120"
-                  />
-                </div>
-              </div>
-
-              <div class="field-row">
-                <div class="field">
-                  <label for="f-site">网站 <em>*</em></label>
-                  <input
-                    id="f-site"
-                    name="site"
-                    type="text"
-                    inputmode="url"
-                    required
-                    placeholder="www.yoursite.com"
-                    maxlength="200"
-                  />
-                </div>
-
-                <div class="field">
-                  <label for="f-budget">月度预算</label>
-                  <select id="f-budget" name="budget">
-                    <option value="">还没想好</option>
-                    <option value="lt-1w">1 万以内</option>
-                    <option value="1w-3w">1–3 万</option>
-                    <option value="gt-3w">3 万以上</option>
-                  </select>
-                </div>
-              </div>
-
-              <div class="field">
-                <label for="f-message">
-                  想解决的问题
-                  <span class="hint">选填，写具体一点我能回得更有用</span>
-                </label>
-                <textarea
-                  id="f-message"
-                  name="message"
-                  rows="4"
-                  maxlength="2000"
-                  placeholder="例如：内容更新了半年，收录正常，但核心词一直在 20 名以外。"
-                ></textarea>
-              </div>
-
-              <!-- 反垃圾：蜜罐字段，真人看不见 -->
-              <input
-                class="hp"
-                type="text"
-                name="_hp"
-                tabindex="-1"
-                autocomplete="off"
-                aria-hidden="true"
-              />
-              <input type="hidden" name="_t" value="" />
-              <input type="hidden" name="_ref" value="" />
-
-              <div class="form-foot">
-                <button class="btn btn--primary" type="submit">
-                  发送，24 小时内回复 <span class="arrow" aria-hidden="true">→</span>
-                </button>
-                <p class="form-legal">
-                  提交即表示同意我通过邮件联系你。<br />不发广告，不转卖你的信息。
-                </p>
-              </div>
-            </form>
-          </div>
-
-          <aside class="contact-aside" data-reveal>
-            <p class="eyebrow">联系</p>
-            <h2>先聊 20 分钟，看看值不值得做</h2>
-            <p>
-              留下站点和你想解决的问题，我会先看公开数据，再回你一封有具体判断的邮件。不合适我会直接说。
-            </p>
-
-            <div class="contact-list">
-              <a href="mailto:hi@example.com">
-                <span class="k">邮箱</span>
-                <span class="v">hi@example.com</span>
-              </a>
-              <div>
-                <span class="k">回复时间</span>
-                <span class="v">工作日 24 小时内</span>
-              </div>
-            </div>
-          </aside>
-        </div>
-      </section>
-    </main>
-
-    <!-- ===================== 页脚 ===================== -->
+<!-- ===================== 页脚 ===================== -->
     <footer class="site-footer">
       <div class="container">
         <div class="footer-inner">
@@ -753,13 +631,12 @@
             <a href="mailto:hi@example.com">hi@example.com</a>
             <a href="/articles/how-search-works">搜索原理</a>
             <a href="#pricing">报价</a>
-            <a href="#contact">联系</a>
             <a href="#main">回到顶部</a>
           </div>
         </div>
 
         <p class="footer-note">
-          本站只在你主动提交表单时收集信息，不投放广告，不用第三方追踪脚本。<br />
+          本站不设表单，也不收集访客信息；不投放广告，不用第三方追踪脚本。<br />
           <a href="https://beian.miit.gov.cn/" rel="nofollow noopener" target="_blank">沪ICP备XXXXXXXX号</a>
         </p>
       </div>

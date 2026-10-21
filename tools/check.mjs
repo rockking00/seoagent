@@ -99,7 +99,7 @@ if (openBraces !== closeBraces) {
 
 // 首页表单
 const index = html.get('index.html') || '';
-if (!/action="\/api\/lead"/.test(index)) problems.push('首页表单没有指向 /api/lead');
+if (/<form/.test(index) && !/action="\/api\/lead"/.test(index)) problems.push('首页表单没有指向 /api/lead');
 
 // 占位符残留
 for (const [page, text] of html) {
