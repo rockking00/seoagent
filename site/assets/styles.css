@@ -2260,3 +2260,152 @@ select {
     display: none;
   }
 }
+
+/* ==========================================================================
+   报价：一页价目表 + 联系条
+   ========================================================================== */
+.price-board {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 22px;
+  align-items: stretch;
+}
+
+.price-block {
+  display: grid;
+  grid-template-columns: 150px minmax(0, 1fr);
+  gap: 20px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 26px 24px;
+}
+
+.price-stack {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  gap: 22px;
+}
+
+.price-meta h3 {
+  font-size: 1.0625rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.price-amount {
+  margin-top: 10px;
+  font-size: 1.375rem;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  line-height: 1.1;
+  font-variant-numeric: tabular-nums;
+}
+
+.price-amount small {
+  font-size: 0.8125rem;
+  font-weight: 500;
+  letter-spacing: 0;
+  color: var(--muted);
+}
+
+.price-unit {
+  margin-top: 5px;
+  font-size: 0.75rem;
+  color: var(--muted);
+}
+
+.price-who {
+  margin-top: 14px;
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  color: var(--accent);
+}
+
+.price-desc p {
+  font-size: 0.9375rem;
+  line-height: 1.85;
+  color: var(--ink-2);
+}
+
+.price-desc p + p {
+  margin-top: 10px;
+}
+
+.price-contact-bar {
+  margin-top: 22px;
+  padding: 22px 24px;
+  background: var(--ink);
+  border-radius: 8px;
+  text-align: center;
+}
+
+.price-contact-bar p {
+  font-size: 0.875rem;
+  line-height: 1.95;
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.price-contact-bar strong {
+  color: #fff;
+  font-weight: 600;
+}
+
+.price-contact-bar a {
+  color: #fff;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+@media (max-width: 1000px) {
+  .price-board {
+    grid-template-columns: 1fr;
+  }
+  .price-stack {
+    grid-template-rows: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .price-block {
+    grid-template-columns: 1fr;
+    gap: 14px;
+    padding: 22px 20px;
+  }
+  .price-meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 6px 14px;
+  }
+  .price-meta h3 {
+    width: 100%;
+  }
+  .price-amount,
+  .price-unit {
+    margin-top: 0;
+  }
+  .price-who {
+    margin-top: 0;
+    width: 100%;
+  }
+}
+/* 首栏卡片：内容撑满，底部留一个入口 */
+.price-block {
+  grid-template-rows: 1fr auto;
+}
+
+.price-cta {
+  grid-column: 1 / -1;
+  justify-self: start;
+  margin-top: 22px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--accent);
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.18s var(--ease);
+}
+
+.price-cta:hover {
+  border-bottom-color: currentColor;
+}
