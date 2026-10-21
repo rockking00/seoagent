@@ -1,0 +1,8 @@
+# 只上传静态站和 api/，其余不参与部署
+server/
+deploy/
+tools/
+docs/
+.shots/
+*.md
+Keyword Stats*.csv

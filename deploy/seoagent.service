@@ -1,0 +1,38 @@
+[Unit]
+Description=SEO site lead endpoint
+Documentation=https://github.com/yourname/seoagent
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=seoagent
+Group=seoagent
+WorkingDirectory=/srv/seoagent/server
+EnvironmentFile=-/srv/seoagent/server/.env
+ExecStart=/usr/bin/node server.mjs
+Restart=always
+RestartSec=3
+TimeoutStopSec=10
+
+# 512MB 机器上的护栏：超了先 GC，再超就被 systemd 杀掉并重启
+MemoryHigh=180M
+MemoryMax=240M
+TasksMax=64
+
+# 权限收敛
+NoNewPrivileges=true
+PrivateTmp=true
+PrivateDevices=true
+ProtectSystem=strict
+ProtectHome=true
+ProtectKernelTunables=true
+ProtectKernelModules=true
+ProtectControlGroups=true
+RestrictSUIDSGID=true
+LockPersonality=true
+RestrictAddressFamilies=AF_INET AF_INET6 AF_UNIX
+ReadWritePaths=/srv/seoagent/server/data
+
+[Install]
+WantedBy=multi-user.target

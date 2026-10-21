@@ -1,0 +1,55 @@
+# Caddy 配置
+#   1. 把 example.com 换成你的域名（两处）
+#   2. 把 hi@example.com 换成你的邮箱（申请证书用，收得到通知就行）
+#   3. 部署到 /etc/caddy/Caddyfile，然后 sudo systemctl reload caddy
+
+{
+	email hi@example.com
+}
+
+# 主站
+example.com {
+	encode zstd gzip
+
+	# 表单接口 → 本机 Node 服务
+	handle /api/* {
+		reverse_proxy 127.0.0.1:3001 {
+			flush_interval -1
+		}
+	}
+
+	# 静态文件
+	handle {
+		root * /srv/seoagent/site
+		try_files {path} {path}.html
+		file_server
+	}
+
+	# 安全响应头
+	header {
+		X-Content-Type-Options nosniff
+		Referrer-Policy strict-origin-when-cross-origin
+		X-Frame-Options SAMEORIGIN
+		Permissions-Policy "geolocation=(), microphone=(), camera=()"
+		-Server
+	}
+
+	# 404 用站内页面，不要 Caddy 默认页
+	handle_errors {
+		root * /srv/seoagent/site
+		rewrite * /404.html
+		file_server
+	}
+
+	log {
+		output file /var/log/caddy/seoagent.log {
+			roll_size 10MiB
+			roll_keep 3
+		}
+	}
+}
+
+# www 跳主域名（没有解析 www 就删掉这一段）
+www.example.com {
+	redir https://example.com{uri} permanent
+}

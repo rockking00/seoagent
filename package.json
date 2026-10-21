@@ -1,0 +1,11 @@
+{
+  "name": "seoagent-site",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "build": "echo \"static site, nothing to build\""
+  }
+}
