@@ -2240,3 +2240,11 @@ select {
 .hero h1 {
   line-height: 1.16;
 }
+
+/* 导航换成关键词词组后变长，窄屏收一点间距和字号 */
+@media (max-width: 1000px) {
+  .nav {
+    gap: 18px;
+    font-size: 0.9rem;
+  }
+}
