@@ -2253,3 +2253,10 @@ select {
 .hero {
   padding-bottom: clamp(36px, 4.5vw, 60px);
 }
+
+/* 导航到 6 项后，940 以下放不下，直接收起，只留右侧 CTA */
+@media (max-width: 940px) {
+  .nav {
+    display: none;
+  }
+}
