@@ -4,4 +4,4 @@ Disallow: /thanks
 Disallow: /api/
 
 # 上线前把下面的域名换成你的
-Sitemap: https://example.com/sitemap.xml
+Sitemap: https://www.sitelookup.net/sitemap.xml
